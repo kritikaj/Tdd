@@ -10,11 +10,9 @@ public class Calculator {
   }
 
   public int divide(int dividend, int divisor) throws UndefinedOperation {
-    if(divisor<dividend){
-      if(divisor != 0){
-        return dividend/divisor;
-      }
+    if((divisor == 0) || (divisor>dividend)){
+      throw new UndefinedOperation();
     }
-    throw new UndefinedOperation();
+    return dividend/divisor;
   }
 }
