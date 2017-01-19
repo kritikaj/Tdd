@@ -7,7 +7,6 @@ import static org.junit.Assert.assertEquals;
 
 public class CalculatorTest {
 
-
   private Calculator calculator;
 
   @Before
@@ -72,26 +71,26 @@ public class CalculatorTest {
 
   @Test
   public void shouldDivideANegativeDividendWithAPositiveDivisorToGiveANegativeQuotient() throws Exception, UndefinedOperation {
-    assertEquals(-2,calculator.divide(-6,3));
+    assertEquals(-2, calculator.divide(-6, 3));
   }
 
   @Test
   public void shouldDivideTwoNegativeNumbersToReturnAPositiveQuotient() throws Exception, UndefinedOperation {
-    assertEquals(2,calculator.divide(-6,-3));
+    assertEquals(2, calculator.divide(-6, -3));
   }
 
   @Test
   public void shouldDivideAPositiveDividendByANegativeDivisorToGiveANegativeQuotient() throws Exception, UndefinedOperation {
-    assertEquals(-2,calculator.divide(10,-5));
+    assertEquals(-2, calculator.divide(10, -5));
   }
 
   @Test(expected = UndefinedOperation.class)
   public void shouldNotAllowDivisionOfANegativeDividendWithAPositiveDivisorIfTheQuotientWillBeLessThanMinusOne() throws Exception, UndefinedOperation {
-    calculator.divide(-3,5);
+    calculator.divide(-3, 5);
   }
 
   @Test
   public void shouldAllowDivisionOfANegativeDividendWithAPositiveDivisorToReturnNearestWholeNumberIfResultIsGreaterThanOne() throws Exception, UndefinedOperation {
-    assertEquals(-2,calculator.divide(-5,3));
+    assertEquals(-2, calculator.divide(-5, 3));
   }
 }
