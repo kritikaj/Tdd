@@ -12,7 +12,7 @@ public class Calculator {
   }
 
   public int divide(int dividend, int divisor) throws UndefinedOperation {
-    if ((divisor == 0) || (abs(divisor) > abs(dividend))) {
+    if ((divisor == 0) || (abs(divisor) > abs(dividend)) && dividend != 0) {
       throw new UndefinedOperation();
     }
     return (int) floor((float) dividend / divisor);

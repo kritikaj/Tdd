@@ -93,4 +93,14 @@ public class CalculatorTest {
   public void shouldAllowDivisionOfANegativeDividendWithAPositiveDivisorToReturnNearestWholeNumberIfResultIsGreaterThanOne() throws Exception, UndefinedOperation {
     assertEquals(-2, calculator.divide(-5, 3));
   }
+
+  @Test
+  public void shouldReturnZeroIfZeroIsDividedByAPositiveNumber() throws Exception, UndefinedOperation {
+    assertEquals(0, calculator.divide(0, 8));
+  }
+
+  @Test
+  public void shouldReturnZeroIfZeroIsDividedByNegativeNumber() throws Exception, UndefinedOperation {
+    assertEquals(0, calculator.divide(0, -4));
+  }
 }
