@@ -50,57 +50,57 @@ public class CalculatorTest {
   }
 
   @Test
-  public void shouldDivideAPositiveNumberByOneToReturnTheSameNumber() throws Exception, UndefinedOperation {
+  public void shouldDivideAPositiveNumberByOneToReturnTheSameNumber() throws Exception {
     assertEquals(5, calculator.divide(5, 1));
   }
 
-  @Test(expected = UndefinedOperation.class)
-  public void shouldNotAllowDivisionOfANumberByZero() throws Exception, UndefinedOperation {
+  @Test(expected = InvalidDivisorException.class)
+  public void shouldNotAllowDivisionOfANumberByZero() throws Exception {
     calculator.divide(7, 0);
   }
 
-  @Test(expected = UndefinedOperation.class)
-  public void shouldNotAllowDivisionOfANumberWithADivisorGreaterThanTheNumber() throws Exception, UndefinedOperation {
+  @Test(expected = InvalidDivisorException.class)
+  public void shouldNotAllowDivisionOfANumberWithADivisorGreaterThanTheNumber() throws Exception {
     calculator.divide(3, 5);
   }
 
   @Test
-  public void shouldReturnNearestRoundOffValueIfTheQuotientIsAFraction() throws Exception, UndefinedOperation {
+  public void shouldReturnNearestRoundOffValueIfTheQuotientIsAFraction() throws Exception {
     assertEquals(1, calculator.divide(5, 3));
   }
 
   @Test
-  public void shouldDivideANegativeDividendWithAPositiveDivisorToGiveANegativeQuotient() throws Exception, UndefinedOperation {
+  public void shouldDivideANegativeDividendWithAPositiveDivisorToGiveANegativeQuotient() throws Exception {
     assertEquals(-2, calculator.divide(-6, 3));
   }
 
   @Test
-  public void shouldDivideTwoNegativeNumbersToReturnAPositiveQuotient() throws Exception, UndefinedOperation {
+  public void shouldDivideTwoNegativeNumbersToReturnAPositiveQuotient() throws Exception {
     assertEquals(2, calculator.divide(-6, -3));
   }
 
   @Test
-  public void shouldDivideAPositiveDividendByANegativeDivisorToGiveANegativeQuotient() throws Exception, UndefinedOperation {
+  public void shouldDivideAPositiveDividendByANegativeDivisorToGiveANegativeQuotient() throws Exception {
     assertEquals(-2, calculator.divide(10, -5));
   }
 
-  @Test(expected = UndefinedOperation.class)
-  public void shouldNotAllowDivisionOfANegativeDividendWithAPositiveDivisorIfTheQuotientWillBeLessThanMinusOne() throws Exception, UndefinedOperation {
+  @Test(expected = InvalidDivisorException.class)
+  public void shouldNotAllowDivisionOfANegativeDividendWithAPositiveDivisorIfTheQuotientWillBeLessThanMinusOne() throws Exception {
     calculator.divide(-3, 5);
   }
 
   @Test
-  public void shouldAllowDivisionOfANegativeDividendWithAPositiveDivisorToReturnNearestWholeNumberIfResultIsGreaterThanOne() throws Exception, UndefinedOperation {
+  public void shouldAllowDivisionOfANegativeDividendWithAPositiveDivisorToReturnNearestWholeNumberIfResultIsGreaterThanOne() throws Exception {
     assertEquals(-2, calculator.divide(-5, 3));
   }
 
-  @Test
-  public void shouldReturnZeroIfZeroIsDividedByAPositiveNumber() throws Exception, UndefinedOperation {
-    assertEquals(0, calculator.divide(0, 8));
+  @Test(expected = InvalidDivisorException.class)
+  public void shouldReturnZeroIfZeroIsDividedByAPositiveNumber() throws Exception {
+    calculator.divide(0, 8);
   }
 
-  @Test
-  public void shouldReturnZeroIfZeroIsDividedByNegativeNumber() throws Exception, UndefinedOperation {
-    assertEquals(0, calculator.divide(0, -4));
+  @Test(expected = InvalidDivisorException.class)
+  public void shouldReturnZeroIfZeroIsDividedByNegativeNumber() throws Exception {
+    calculator.divide(0, -4);
   }
 }
