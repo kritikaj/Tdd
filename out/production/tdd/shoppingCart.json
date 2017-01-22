@@ -1,0 +1,26 @@
+[
+  {
+    "name" : "Perfume",
+    "price" : 27.99,
+    "itemType" : "OTHER",
+    "isImported" : true
+  },
+  {
+    "name" : "normal perfume",
+    "price" : 18.99,
+    "itemType" : "OTHER",
+    "isImported" : false
+  },
+  {
+    "name" : "headache pills",
+    "price" : 9.75,
+    "itemType" : "MEDICINE",
+    "isImported" : false
+  },
+  {
+    "name" : "chocolates",
+    "price" : 11.25,
+    "itemType" : "FOOD",
+    "isImported" : true
+  }
+]
